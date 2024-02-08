@@ -1,3 +1,6 @@
+import Nav from "@/components/Nav"
+import { ThemeProvider } from "@/components/ThemeProvider"
+import { ThemeToggle } from "@/components/ThemeToggle"
 import "@/styles/globals.css"
 import cx from "clsx"
 import type { Metadata } from "next"
@@ -30,11 +33,21 @@ export default function RootLayout({
     <html lang="en" className="scroll-p-24">
       <body
         className={cx(
-          "antialiased font-sans bg-gray-900 selection:bg-purple-500/30 selection:text-red-500",
+          "antialiased bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 font-sans",
           inter.className,
         )}
       >
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <div className="max-w-2xl mx-auto py-10 px-4">
+            <header>
+              <div className="flex items-center justify-between">
+                <ThemeToggle />
+                <Nav />
+              </div>
+            </header>
+            <main>{children}</main>
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   )
