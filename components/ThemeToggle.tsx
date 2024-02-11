@@ -8,7 +8,7 @@ export function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-      className="border rounded-md w-6 h-6 flex items-center justify-center"
+      className="border border-neutral-900/10 dark:border-white/10 rounded-md w-6 h-6 flex items-center justify-center"
     >
       <span className="sr-only">Toggle mode</span>
       {theme !== "dark" ? (

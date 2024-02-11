@@ -4,7 +4,7 @@ import Image from "next/image"
 export default function Home() {
   return (
     <>
-      <div className="flex min-h-screen flex-col items-center justify-center p-24 gap-y-2">
+      <div className="flex flex-col items-center justify-center p-24 gap-y-2">
         <h1 className="font-bold text-2xl">Elliott Phillips</h1>
         <p className="text-primary-400 font-bold">
           made with <span className=" text-secondary-400">&hearts;</span> built

@@ -1,6 +1,6 @@
-import Nav from "@/components/Nav"
+import Footer from "@/components/Footer"
+import Header from "@/components/Header"
 import { ThemeProvider } from "@/components/ThemeProvider"
-import { ThemeToggle } from "@/components/ThemeToggle"
 import "@/styles/globals.css"
 import cx from "clsx"
 import type { Metadata } from "next"
@@ -33,20 +33,23 @@ export default function RootLayout({
     <html lang="en" className="scroll-p-24">
       <body
         className={cx(
-          "antialiased bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 font-sans",
+          "flex min-h-full flex-col antialiased bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 font-sans",
           inter.className,
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="max-w-2xl mx-auto py-10 px-4">
-            <header>
-              <div className="flex items-center justify-between">
-                <ThemeToggle />
-                <Nav />
-              </div>
-            </header>
-            <main>{children}</main>
+          <div className="pointer-events-none absolute inset-0 flex justify-center">
+            <div className="hidden h-full w-full max-w-7xl grid-cols-[30%_70%] gap-3.5 px-4 lg:grid">
+              <div className="border-x border-neutral-900/10 dark:border-white/10"></div>
+              <div className="border-x border-neutral-900/10 dark:border-white/10"></div>
+            </div>
           </div>
+
+          <Header />
+
+          <main className="relative flex grow flex-col">{children}</main>
+
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
