@@ -12,8 +12,8 @@ export default function Header() {
       <div className="mx-auto w-full max-w-7xl px-4 md:px-6">
         <div className="flex h-16 items-center justify-between lg:h-20">
           <div className="flex items-center">
-            <a href="/" className="text-2xl font-bold">
-              Elliott Phillips
+            <a href="/" className="text-2xl font-bold font-mono">
+              ~/
             </a>
           </div>
 
