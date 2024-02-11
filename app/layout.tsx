@@ -1,25 +1,19 @@
 import Footer from "@/components/Footer"
 import Header from "@/components/Header"
 import { ThemeProvider } from "@/components/ThemeProvider"
+import { siteMetadata } from "@/lib/metadata"
 import "@/styles/globals.css"
+
 import cx from "clsx"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 
 const inter = Inter({ subsets: ["latin"] })
 
-const siteMetadata = {
-  title: "Elliott Phillips",
-  description: `Full stack Software Engineer who values learning and growing with people, teams, and technologies.`,
-  domain: `ellsphillips.dev`,
-  linkedIn: `@elliott.phillips`,
-  meta: `Lead Engineer at Department for Levelling Up`,
-}
-
 export const metadata: Metadata = {
   title: {
-    template: `%s | ${siteMetadata.title}`,
-    default: siteMetadata.title,
+    template: `%s | ${siteMetadata.name}`,
+    default: siteMetadata.name,
   },
   description: siteMetadata.description,
 }
