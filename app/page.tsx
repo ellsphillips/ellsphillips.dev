@@ -1,27 +1,33 @@
+import { siteMetadata } from "@/lib/metadata"
 import "@/styles/globals.css"
 import Image from "next/image"
 
 export default function Home() {
   return (
     <>
-      <div className="flex flex-col items-center justify-center p-24 gap-y-2">
-        <h1 className="font-bold text-2xl">Elliott Phillips</h1>
-        <p className="text-primary-400 font-bold">
-          made with <span className=" text-secondary-400">&hearts;</span> built
-          with
-        </p>
+      <section className="mb-12 mt-64 border-neutral-900/10 dark:border-white/10 md:mt-28 lg:my-28 lg:border-y lg:py-2">
+        <div className="mx-auto w-full max-w-7xl px-4 md:px-6">
+          <div className="w-full max-w-7xl grid-cols-[30%_70%] gap-5 lg:grid ">
+            <Image
+              className="max-w-[calc(100%-.75rem)] w-full rounded-xl "
+              src="/headshot.jpg"
+              alt="Elliott Phillips portrait"
+              width={180}
+              height={180}
+              priority
+            />
 
-        <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-transparent before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-primary-600 after:via-primary-300 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-secondary-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-secondary-600 after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-          <Image
-            className="relative dark:drop-shadow-[0_0_0.3rem_#from-sky-900] dark:invert"
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
+            <div>
+              <h1 className="text-3xl font-extrabold tracking-tight dark:text-white md:text-[40px] md:leading-[1.1] lg:col-span-2 lg:text-[64px] lg:leading-[1.125em]">
+                Elliott Phillips
+              </h1>
+              <div className="mt-8 max-w-lg space-y-6 text-lg leading-[1.4] dark:text-gray-300 md:max-w-xl lg:text-xl">
+                <p>{siteMetadata.description}</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
     </>
   )
 }
