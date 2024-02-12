@@ -7,9 +7,9 @@ export default function Home() {
     <>
       <section className="mb-12 mt-64 border-neutral-900/10 dark:border-white/10 md:mt-28 lg:my-28 lg:border-y lg:py-2">
         <div className="mx-auto w-full max-w-7xl px-4 md:px-6">
-          <div className="w-full max-w-7xl grid-cols-[30%_70%] gap-5 lg:grid ">
+          <div className="w-full max-w-7xl grid-cols-[24rem_auto] gap-5 lg:grid ">
             <Image
-              className="max-w-[calc(100%-.75rem)] w-full rounded-xl "
+              className="max-w-[calc(100%-1rem)] w-full rounded-xl "
               src="/headshot.jpg"
               alt="Elliott Phillips portrait"
               width={180}

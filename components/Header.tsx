@@ -17,7 +17,7 @@ export default function Header() {
             </a>
           </div>
 
-          <div className="flex items-center">
+          <div className="flex items-center pr-4">
             <div className="mr-6 hidden space-x-10 border-r border-neutral-900/10 dark:border-white/10 py-0.5 pr-6 md:block">
               <nav className="font-medium space-x-6">
                 {links.map(({ href, label }) => (

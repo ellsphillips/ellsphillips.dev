@@ -33,7 +33,7 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="pointer-events-none absolute inset-0 flex justify-center">
-            <div className="hidden h-full w-full max-w-7xl grid-cols-[30%_70%] gap-3.5 px-4 lg:grid">
+            <div className="hidden h-full w-full max-w-7xl grid-cols-[24rem_auto] gap-3.5 px-4 lg:grid">
               <div className="border-x border-neutral-900/10 dark:border-white/10"></div>
               <div className="border-x border-neutral-900/10 dark:border-white/10"></div>
             </div>
