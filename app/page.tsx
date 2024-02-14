@@ -28,6 +28,28 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="py-16 border-neutral-900/10 dark:border-white/10 lg:border-y">
+        <div className="w-full px-4 mx-auto max-w-7xl md:px-6">
+          <h2 className="text-4xl font-bold tracking-tight dark:text-white">
+            Latest Posts
+          </h2>
+          <ul className="mt-6 space-y-6">
+            {allPosts.slice(0, 3).map((post) => (
+              <li key={post.slug}>
+                <Link href={post.slug}>
+                  <h3 className="text-xl font-bold dark:text-white md:text-2xl">
+                    {post.title}
+                  </h3>
+                  <p className="mt-2 text-lg dark:text-gray-300">
+                    {post.description}
+                  </p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
     </>
   )
 }
