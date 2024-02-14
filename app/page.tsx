@@ -1,15 +1,19 @@
+import { allPosts } from "@/.contentlayer/generated"
+import Section from "@/components/Section"
 import { siteMetadata } from "@/lib/metadata"
+
 import "@/styles/globals.css"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function Home() {
   return (
     <>
-      <section className="mb-12 mt-64 border-neutral-900/10 dark:border-white/10 md:mt-28 lg:my-28 lg:border-y lg:py-2">
-        <div className="mx-auto w-full max-w-7xl px-4 md:px-6">
-          <div className="w-full max-w-7xl grid-cols-[24rem_auto] gap-5 lg:grid ">
+      <Section className="py-2">
+        <div className="w-full px-4 mx-auto max-w-7xl md:px-6">
+          <div className="w-full max-w-7xl grid-cols-[24rem_auto] gap-5 lg:grid">
             <Image
-              className="max-w-[calc(100%-1rem)] w-full rounded-xl "
+              className="max-w-[calc(100%-1rem)] w-full rounded-xl"
               src="/headshot.jpg"
               alt="Elliott Phillips portrait"
               width={180}
@@ -27,9 +31,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </Section>
 
-      <section className="py-16 border-neutral-900/10 dark:border-white/10 lg:border-y">
+      <Section>
         <div className="w-full px-4 mx-auto max-w-7xl md:px-6">
           <h2 className="text-4xl font-bold tracking-tight dark:text-white">
             Latest Posts
@@ -49,7 +53,7 @@ export default function Home() {
             ))}
           </ul>
         </div>
-      </section>
+      </Section>
     </>
   )
 }
