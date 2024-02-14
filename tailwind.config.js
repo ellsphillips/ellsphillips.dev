@@ -16,8 +16,8 @@ module.exports = {
         "9/16": "56.25%",
       },
       colors: {
-        primary: colors.violet,
-        secondary: colors.orange,
+        primary: colors.sky,
+        secondary: colors.indigo,
         neutral: colors.slate,
         "placeholder-light": "#F0F0F0",
         "placeholder-dark": "#252525",

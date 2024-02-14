@@ -5,7 +5,7 @@ export default function PostLayout({
 }) {
   return (
     <div className="w-full px-4 mx-auto max-w-7xl md:px-6">
-      <div className="w-full max-w-7xl grid-cols-[24rem_auto] gap-5 lg:grid">
+      <div className="w-full max-w-7xl grid-cols-[23rem_auto] gap-8 lg:grid">
         <aside>
           <h2>Post info</h2>
         </aside>
