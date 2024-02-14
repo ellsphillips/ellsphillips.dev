@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="scroll-p-24">
+    <html suppressHydrationWarning lang="en">
       <body
         className={cx(
           "flex min-h-full flex-col antialiased bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 font-sans",
