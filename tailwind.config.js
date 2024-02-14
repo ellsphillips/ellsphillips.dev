@@ -7,6 +7,7 @@ module.exports = {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{js,ts,jsx,tsx}",
     "./lib/**/*.{js,ts}",
+    "./content/**/*.{md,mdx}",
   ],
   darkMode: "class",
   theme: {
