@@ -27,7 +27,7 @@ const Breadcrumbs = () => {
           <React.Fragment key={index}>
             <li
               className={`hover:underline mx-2 font-bold ${
-                paths === href && "text-primary-300"
+                paths === href && "text-primary-600 dark:text-primary-300"
               }`}
             >
               <Link href={href}>{link}</Link>

@@ -8,7 +8,7 @@ const links = [{ href: "/blog", label: "Blog" }]
 export default function Header() {
   return (
     <header
-      className="relative z-50 bg-gradient-to-b from-gray-900/20 to-gray-900/0"
+      className="relative z-50 bg-neutral-50 dark:bg-neutral-900/50"
       data-test="header"
     >
       <div className="w-full px-4 mx-auto max-w-7xl md:px-6">
