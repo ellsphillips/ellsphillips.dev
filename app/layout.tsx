@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer"
 import Header from "@/components/Header"
 import { ThemeProvider } from "@/components/ThemeProvider"
+import { Analytics } from "@/components/analytics"
 import { siteMetadata } from "@/lib/metadata"
 import "@/styles/globals.css"
 
@@ -24,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="scroll-p-24">
+    <html suppressHydrationWarning lang="en">
       <body
         className={cx(
           "flex min-h-full flex-col antialiased bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 font-sans",
@@ -32,8 +33,8 @@ export default function RootLayout({
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="pointer-events-none absolute inset-0 flex justify-center">
-            <div className="hidden h-full w-full max-w-7xl grid-cols-[30%_70%] gap-3.5 px-4 lg:grid">
+          <div className="absolute inset-0 flex justify-center pointer-events-none">
+            <div className="hidden h-full w-full max-w-7xl grid-cols-[24rem_auto] gap-3.5 px-4 lg:grid">
               <div className="border-x border-neutral-900/10 dark:border-white/10"></div>
               <div className="border-x border-neutral-900/10 dark:border-white/10"></div>
             </div>
@@ -41,9 +42,10 @@ export default function RootLayout({
 
           <Header />
 
-          <main className="relative flex grow flex-col">{children}</main>
+          <main className="relative flex flex-col grow">{children}</main>
 
           <Footer />
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
