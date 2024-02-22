@@ -16,18 +16,20 @@ export default function PostLayout() {
 
       <Section>
         <div className="space-y-6">
-          {allPosts.map((post) => (
-            <div key={post.slug}>
-              <Link href={post.slug}>
-                <h3 className="text-xl font-bold dark:text-white md:text-2xl">
-                  {post.title}
-                </h3>
-                <p className="mt-2 text-lg dark:text-gray-300">
-                  {post.description}
-                </p>
-              </Link>
-            </div>
-          ))}
+          {allPosts.map((post) =>
+            post.draft ? null : (
+              <div key={post.slug}>
+                <Link href={post.slug}>
+                  <h3 className="text-xl font-bold dark:text-white md:text-2xl">
+                    {post.title}
+                  </h3>
+                  <p className="mt-2 text-lg dark:text-gray-300">
+                    {post.description}
+                  </p>
+                </Link>
+              </div>
+            ),
+          )}
         </div>
       </Section>
     </div>
