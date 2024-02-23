@@ -2,7 +2,8 @@ import { allPosts } from "contentlayer/generated"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 
-import { Mdx } from "@/components/MDXComponents"
+import { MDXContent } from "@/components/MDXComponents"
+import clsx from "clsx"
 
 interface PostProps {
   params: {
@@ -57,8 +58,39 @@ export default async function PostPage({ params }: PostProps) {
           {post.description}
         </p>
       )}
+
       <hr className="my-4" />
-      <Mdx code={post.body.code} />
+
+      <div className="sticky top-6 hidden h-0 xl:!col-start-4 xl:row-start-2 xl:block">
+        <div className="space-y-6">
+          {post.headings ? (
+            <div className="space-y-2 text-sm">
+              <div className="uppercase text-rose-100/30">On this page</div>
+
+              {post.headings.map((heading) => {
+                return (
+                  <div key={heading.slug}>
+                    <a
+                      href={`#${heading.slug}`}
+                      className={clsx(
+                        "block text-rose-100/50 underline-offset-2 transition-all hover:text-rose-100 hover:underline hover:decoration-rose-200/50",
+                        {
+                          "pl-2": heading.heading === 2,
+                          "pl-4": heading.heading === 3,
+                        },
+                      )}
+                    >
+                      {heading.text}
+                    </a>
+                  </div>
+                )
+              })}
+            </div>
+          ) : null}
+        </div>
+      </div>
+
+      <MDXContent code={post.body.code} />
     </article>
   )
 }
