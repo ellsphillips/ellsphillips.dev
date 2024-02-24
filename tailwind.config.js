@@ -24,7 +24,9 @@ module.exports = {
       },
       backgroundSize: {
         4: "1rem",
+        6: "1.5rem",
         8: "2rem",
+        12: "3rem",
         16: "4rem",
       },
       backgroundImage: {

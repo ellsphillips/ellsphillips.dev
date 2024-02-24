@@ -13,7 +13,7 @@ export default function TableOfContents({
             <a
               href={`#${heading.slug}`}
               className={clsx(
-                "block text-rose-100/50 underline-offset-2 transition-all hover:text-neutral-100 hover:underline hover:decoration-neutral-200/50",
+                "block text-neutral-900 dark:text-neutral-100/50 underline-offset-2 transition-all hover:text-neutral-500 dark:hover:text-neutral-100 hover:underline",
                 {
                   "pl-2": heading.heading === 2,
                   "pl-4": heading.heading === 3,
