@@ -1,20 +1,19 @@
 import { allPosts } from "@/.contentlayer/generated"
-import Section from "@/components/Section"
 import Link from "next/link"
 
 export default function PostLayout() {
   return (
     <div className="layout-content">
-      <Section>
+      <section>
         <h3 className="mb-2 text-2xl font-bold">Search for a post</h3>
         <input
           type="text"
           placeholder="Search"
           className="w-full p-2 mt-2 border rounded dark:border-neutral-600 dark:bg-neutral-800 dark:text-white"
         />
-      </Section>
+      </section>
 
-      <Section>
+      <section>
         <div className="space-y-8">
           {allPosts.map((post) => (
             <div key={post.slug}>
@@ -36,7 +35,7 @@ export default function PostLayout() {
             </div>
           ))}
         </div>
-      </Section>
+      </section>
     </div>
   )
 }
