@@ -5,7 +5,6 @@ import { notFound } from "next/navigation"
 import { MDXContent } from "@/components/MDXComponents"
 import Section from "@/components/Section"
 import TableOfContents from "@/components/TableOfContents"
-import { getPartialPost } from "@/lib/contentlayer"
 import Link from "next/link"
 
 interface PostProps {
@@ -19,10 +18,15 @@ async function getPostFromParams(params: PostProps["params"]) {
   const post = allPosts.find((post) => post.slugAsParams === slug)
 
   if (!post) {
-    null
+    return null
   }
 
-  return post ? getPartialPost(post) : null
+  return {
+    ...post,
+    headings:
+      (post.headings as { heading: number; text: string; slug: string }[]) ??
+      null,
+  }
 }
 
 export async function generateMetadata({
