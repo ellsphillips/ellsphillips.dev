@@ -85,6 +85,12 @@ const components = {
       {...props}
     />
   ),
+  code: (props: any) => (
+    <code
+      className="px-1.5 py-0.5 text-neutral-800 dark:text-neutral-100 bg-neutral-200/50 dark:bg-neutral-600/50 rounded font-mono"
+      {...props}
+    />
+  ),
 }
 
 interface MdxProps {
