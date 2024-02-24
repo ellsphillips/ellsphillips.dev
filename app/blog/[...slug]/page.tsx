@@ -3,8 +3,8 @@ import { Metadata } from "next"
 import { notFound } from "next/navigation"
 
 import { MDXContent } from "@/components/MDXComponents"
+import TableOfContents from "@/components/TableOfContents"
 import { getPartialPost } from "@/lib/contentlayer"
-import clsx from "clsx"
 
 interface PostProps {
   params: {
@@ -52,44 +52,28 @@ export default async function PostPage({ params }: PostProps) {
   }
 
   return (
-    <article className="py-6 prose dark:prose-invert">
-      <h1 className="mb-2">{post.title}</h1>
-      {post.description && (
-        <p className="mt-0 text-xl text-slate-700 dark:text-slate-200">
-          {post.description}
-        </p>
-      )}
-
-      <hr className="my-4" />
-
-      <div className="space-y-6">
+    <main className="layout-content">
+      <aside className="space-y-6">
         {post.headings ? (
-          <div className="space-y-2 text-sm">
-            <div className="uppercase text-rose-100/30">On this page</div>
+          <div className="sticky block h-0">
+            <h2 className="uppercase text-rose-100/30">On this page</h2>
 
-            {post.headings.map((heading) => {
-              return (
-                <div key={heading.slug}>
-                  <a
-                    href={`#${heading.slug}`}
-                    className={clsx(
-                      "block text-rose-100/50 underline-offset-2 transition-all hover:text-neutral-100 hover:underline hover:decoration-rose-200/50",
-                      {
-                        "pl-2": heading.heading === 2,
-                        "pl-4": heading.heading === 3,
-                      },
-                    )}
-                  >
-                    {heading.text}
-                  </a>
-                </div>
-              )
-            })}
+            <TableOfContents headings={post.headings} />
           </div>
         ) : null}
-      </div>
+      </aside>
+      <article className="prose dark:prose-invert">
+        <h1 className="mb-2">{post.title}</h1>
+        {post.description && (
+          <p className="mt-0 text-xl text-slate-700 dark:text-slate-200">
+            {post.description}
+          </p>
+        )}
 
-      <MDXContent code={post.body.code} />
-    </article>
+        <hr className="my-4" />
+
+        <MDXContent code={post.body.code} />
+      </article>
+    </main>
   )
 }
