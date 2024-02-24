@@ -3,6 +3,7 @@ import { Metadata } from "next"
 import { notFound } from "next/navigation"
 
 import { MDXContent } from "@/components/MDXComponents"
+import { getPartialPost } from "@/lib/contentlayer"
 import clsx from "clsx"
 
 interface PostProps {
@@ -19,7 +20,7 @@ async function getPostFromParams(params: PostProps["params"]) {
     null
   }
 
-  return post
+  return post ? getPartialPost(post) : null
 }
 
 export async function generateMetadata({
@@ -61,33 +62,31 @@ export default async function PostPage({ params }: PostProps) {
 
       <hr className="my-4" />
 
-      <div className="sticky top-6 hidden h-0 xl:!col-start-4 xl:row-start-2 xl:block">
-        <div className="space-y-6">
-          {post.headings ? (
-            <div className="space-y-2 text-sm">
-              <div className="uppercase text-rose-100/30">On this page</div>
+      <div className="space-y-6">
+        {post.headings ? (
+          <div className="space-y-2 text-sm">
+            <div className="uppercase text-rose-100/30">On this page</div>
 
-              {post.headings.map((heading) => {
-                return (
-                  <div key={heading.slug}>
-                    <a
-                      href={`#${heading.slug}`}
-                      className={clsx(
-                        "block text-rose-100/50 underline-offset-2 transition-all hover:text-rose-100 hover:underline hover:decoration-rose-200/50",
-                        {
-                          "pl-2": heading.heading === 2,
-                          "pl-4": heading.heading === 3,
-                        },
-                      )}
-                    >
-                      {heading.text}
-                    </a>
-                  </div>
-                )
-              })}
-            </div>
-          ) : null}
-        </div>
+            {post.headings.map((heading) => {
+              return (
+                <div key={heading.slug}>
+                  <a
+                    href={`#${heading.slug}`}
+                    className={clsx(
+                      "block text-rose-100/50 underline-offset-2 transition-all hover:text-neutral-100 hover:underline hover:decoration-rose-200/50",
+                      {
+                        "pl-2": heading.heading === 2,
+                        "pl-4": heading.heading === 3,
+                      },
+                    )}
+                  >
+                    {heading.text}
+                  </a>
+                </div>
+              )
+            })}
+          </div>
+        ) : null}
       </div>
 
       <MDXContent code={post.body.code} />
