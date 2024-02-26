@@ -15,25 +15,29 @@ export default function PostLayout() {
 
       <section>
         <div className="space-y-8">
-          {allPosts.map((post) => (
-            <div key={post.slug}>
-              <Link href={post.slug}>
-                <div className="flex justify-between py-1">
-                  <h3 className="text-xl font-bold md:text-2xl text-primary-600 dark:text-primary-300">
-                    {post.title}
-                  </h3>
-                  {post.status === "draft" && (
-                    <span className="flex items-center px-2 font-bold text-white rounded-sm bg-neutral-800">
-                      DRAFT
-                    </span>
-                  )}
-                </div>
-                <p className="mt-2 text-lg dark:text-gray-300">
-                  {post.description}
-                </p>
-              </Link>
-            </div>
-          ))}
+          {allPosts
+            .sort(
+              (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+            )
+            .map((post) => (
+              <div key={post.slug}>
+                <Link href={post.slug}>
+                  <div className="flex justify-between py-1">
+                    <h3 className="text-xl font-bold md:text-2xl text-primary-600 dark:text-primary-300">
+                      {post.title}
+                    </h3>
+                    {post.status === "draft" && (
+                      <span className="flex items-center px-2 font-bold text-white rounded-sm bg-neutral-800">
+                        DRAFT
+                      </span>
+                    )}
+                  </div>
+                  <p className="mt-2 text-lg dark:text-gray-300">
+                    {post.description}
+                  </p>
+                </Link>
+              </div>
+            ))}
         </div>
       </section>
     </div>
