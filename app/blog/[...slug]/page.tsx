@@ -5,6 +5,7 @@ import { notFound } from "next/navigation"
 import { MDXContent } from "@/components/MDXComponents"
 import Section from "@/components/Section"
 import TableOfContents from "@/components/TableOfContents"
+import Image from "next/image"
 import Link from "next/link"
 
 interface PostProps {
@@ -68,6 +69,12 @@ export default async function PostPage({ params }: PostProps) {
           <p className="font-semibold text-slate-800 dark:text-gray-300">
             {post.description}
           </p>
+          <span></span>
+          <div className="flex items-center space-x-4 text-slate-800 dark:text-gray-300">
+            <time>{post.dateFormatted}</time>
+            <span>•</span>
+            <span>{post.readTime} min read</span>
+          </div>
           <div className="flex items-center pt-10 pb-6 text-sm align-baseline text-slate-800 dark:text-gray-400">
             <span className="mr-2">&larr;</span>
             <Link
@@ -82,7 +89,7 @@ export default async function PostPage({ params }: PostProps) {
         <Section className="pt-0 pb-2">
           <div className="flex mx-6 min-h-full min-w-0 flex-col items-center justify-center mt-2 overflow-hidden rounded-lg dark:bg-neutral-800 bg-neutral-200 ring-1 ring-inset ring-white/5 aspect-[2/1]">
             {post.thumbnail ? (
-              <img
+              <Image
                 src={post.thumbnail}
                 className="object-cover object-center"
                 alt=""
