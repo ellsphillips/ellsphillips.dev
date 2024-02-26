@@ -4,7 +4,7 @@ import Link from "next/link"
 export default function PostLayout() {
   return (
     <div className="layout-content">
-      <section>
+      <section className="pb-8">
         <h3 className="mb-2 text-2xl font-bold">Search for a post</h3>
         <input
           type="text"
@@ -18,8 +18,8 @@ export default function PostLayout() {
           {allPosts.map((post) => (
             <div key={post.slug}>
               <Link href={post.slug}>
-                <div className="flex justify-between pb-1">
-                  <h3 className="text-xl font-bold dark:text-white md:text-2xl">
+                <div className="flex justify-between py-1">
+                  <h3 className="text-xl font-bold md:text-2xl text-primary-600 dark:text-primary-300">
                     {post.title}
                   </h3>
                   {post.status === "draft" && (
