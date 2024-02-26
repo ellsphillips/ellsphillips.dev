@@ -16,13 +16,13 @@ const components = {
   ),
   h2: (props: any) => (
     <h3
-      className="relative mt-3 text-xl font-medium border-t-2 border-neutral-200/5 pt-9 text-neutral-800 dark:text-neutral-100 sm:text-2xl"
+      className="relative flex items-center gap-2 mt-3 text-xl font-medium border-t-2 border-neutral-200/5 pt-9 text-neutral-800 dark:text-neutral-100 sm:text-2xl"
       {...props}
     />
   ),
   h3: (props: any) => (
     <h4
-      className="text-xl font-medium text-neutral-800 dark:text-neutral-100"
+      className="flex items-center gap-2 text-xl font-medium text-neutral-800 dark:text-neutral-100"
       {...props}
     />
   ),
