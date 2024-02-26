@@ -68,6 +68,12 @@ export default async function PostPage({ params }: PostProps) {
           <p className="font-semibold text-slate-800 dark:text-gray-300">
             {post.description}
           </p>
+          <span></span>
+          <div className="flex items-center space-x-4 text-slate-800 dark:text-gray-300">
+            <time>{post.dateFormatted}</time>
+            <span>•</span>
+            <span>{post.readTime} min read</span>
+          </div>
           <div className="flex items-center pt-10 pb-6 text-sm align-baseline text-slate-800 dark:text-gray-400">
             <span className="mr-2">&larr;</span>
             <Link

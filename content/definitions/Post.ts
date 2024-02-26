@@ -52,5 +52,13 @@ export const Post = defineDocumentType(() => ({
       type: "string",
       resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
     },
+    readTime: {
+      type: "string",
+      resolve: (post) => {
+        const wordsPerMinute = 200
+        const wordCount = post.body.raw.split(/\s/g).length
+        return Math.ceil(wordCount / wordsPerMinute)
+      },
+    },
   },
 }))
