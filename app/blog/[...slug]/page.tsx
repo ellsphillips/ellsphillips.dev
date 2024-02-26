@@ -5,6 +5,7 @@ import { notFound } from "next/navigation"
 import { MDXContent } from "@/components/MDXComponents"
 import Section from "@/components/Section"
 import TableOfContents from "@/components/TableOfContents"
+import Image from "next/image"
 import Link from "next/link"
 
 interface PostProps {
@@ -88,7 +89,7 @@ export default async function PostPage({ params }: PostProps) {
         <Section className="pt-0 pb-2">
           <div className="flex mx-6 min-h-full min-w-0 flex-col items-center justify-center mt-2 overflow-hidden rounded-lg dark:bg-neutral-800 bg-neutral-200 ring-1 ring-inset ring-white/5 aspect-[2/1]">
             {post.thumbnail ? (
-              <img
+              <Image
                 src={post.thumbnail}
                 className="object-cover object-center"
                 alt=""

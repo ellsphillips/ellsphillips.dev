@@ -1,6 +1,5 @@
 import cx from "clsx"
 import { useMDXComponent } from "next-contentlayer/hooks"
-import Image, { type ImageProps } from "next/image"
 import Link from "next/link"
 
 export const FOCUS_VISIBLE_OUTLINE = `focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-500/70`
@@ -72,7 +71,6 @@ const components = {
     <ol className="pl-10 space-y-3 list-decimal" {...props} />
   ),
   strong: (props: any) => <strong className="font-semibold" {...props} />,
-  Img: (props: ImageProps) => <Image {...props} />,
   blockquote: (props: any) => (
     <blockquote
       className="border-l-2 border-neutral-200/10 pl-4 text-xl italic xl:!col-start-2 xl:!col-end-3"
