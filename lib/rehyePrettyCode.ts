@@ -1,6 +1,8 @@
 import { type Options } from "rehype-pretty-code"
 import { visit } from "unist-util-visit"
 
+import theme from "./theme"
+
 // div.BLOCK > pre.PRE > code.CODE
 const BLOCK =
   "overflow-hidden rounded-lg outline outline-neutral-200 dark:outline-none outline-[1px] bg-neutral-50/50 dark:bg-primary-100/5 shadow-surface-elevation-low ring-1 ring-primary-100/[3%] ring-inset my-6"
@@ -102,7 +104,7 @@ export function rehypePrettyCodeClasses() {
 }
 
 export const rehypePrettyCodeOptions: Partial<Options> = {
-  theme: "one-dark-pro",
+  theme: theme as never as JSON | string,
   tokensMap: {
     fn: "entity.name.function",
     objKey: "meta.object-literal.key",
