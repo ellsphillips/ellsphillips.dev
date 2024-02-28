@@ -10,7 +10,7 @@ export default function Section(props: SectionProps) {
   return (
     <section
       className={cn(
-        "relative w-full h-full py-16 border-neutral-900/10 dark:border-white/10 lg:border-y",
+        "relative w-full h-full py-16 border-neutral-900/10 dark:border-white/10 xl:border-y",
         props.className,
       )}
     >

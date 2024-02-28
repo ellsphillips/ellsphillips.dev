@@ -11,9 +11,9 @@ export default function Home() {
     <>
       <Section className="py-2">
         <div className="w-full px-4 mx-auto max-w-7xl md:px-6">
-          <div className="w-full max-w-7xl grid-cols-[24rem_auto] gap-4 lg:grid space-y-12">
+          <div className="w-full max-w-7xl grid-cols-[24rem_auto] gap-4 xl:grid space-y-12">
             <Image
-              className="lg:max-w-[calc(100%-1rem)] max-w-sm w-full rounded-xl"
+              className="xl:max-w-[calc(100%-1rem)] max-w-sm w-full rounded-xl"
               src="/headshot.jpg"
               alt="Elliott Phillips portrait"
               width={180}
@@ -22,10 +22,10 @@ export default function Home() {
             />
 
             <div>
-              <h1 className="text-3xl font-extrabold tracking-tight dark:text-white lg:text-6xl lg:leading-[1.125em]">
+              <h1 className="text-3xl font-extrabold tracking-tight dark:text-white xl:text-6xl xl:leading-[1.125em]">
                 Elliott Phillips
               </h1>
-              <p className="mt-4 lg:mt-8 max-w-lg space-y-6 text-lg leading-[1.4] dark:text-gray-300 md:max-w-xl lg:text-xl">
+              <p className="mt-4 xl:mt-8 max-w-lg space-y-6 text-lg leading-[1.4] dark:text-gray-300 md:max-w-xl xl:text-xl">
                 <p>{siteMetadata.description}</p>
               </p>
             </div>

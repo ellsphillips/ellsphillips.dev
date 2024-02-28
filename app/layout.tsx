@@ -33,8 +33,8 @@ export default function RootLayout({
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="absolute inset-0 flex justify-center pointer-events-none">
-            <div className="hidden h-full w-full max-w-7xl grid-cols-[24rem_auto] gap-3.5 px-4 lg:grid">
+          <div className="fixed inset-0 flex justify-center pointer-events-none">
+            <div className="hidden h-full w-full max-w-7xl grid-cols-[24rem_auto] gap-3.5 px-4 xl:grid">
               <div className="border-x border-neutral-900/10 dark:border-white/10"></div>
               <div className="border-x border-neutral-900/10 dark:border-white/10"></div>
             </div>
