@@ -7,10 +7,7 @@ const links = [{ href: "/blog", label: "Blog" }]
 
 export default function Header() {
   return (
-    <header
-      className="relative z-50 bg-neutral-50 dark:bg-neutral-900/50"
-      data-test="header"
-    >
+    <header className="fixed z-50 w-full bg-neutral-50 dark:bg-neutral-900">
       <div className="w-full px-4 mx-auto max-w-7xl md:px-6">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <div className="block mr-2 font-bold hover:underline md:hidden">

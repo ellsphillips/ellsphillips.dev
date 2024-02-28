@@ -4,7 +4,7 @@
 
 @layer components {
   .layout-content {
-    @apply p-4 md:p-6 mx-auto w-full max-w-7xl grid-cols-[23rem_auto] gap-8 lg:grid;
+    @apply p-4 md:p-6 mx-auto w-full max-w-7xl grid-cols-[23rem_auto] gap-8 xl:grid;
   }
 }
 

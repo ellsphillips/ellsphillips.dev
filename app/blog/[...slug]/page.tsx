@@ -60,9 +60,9 @@ export default async function PostPage({ params }: PostProps) {
 
   return (
     <>
-      <header className="w-full pb-12">
+      <header className="w-full pt-20 pb-12">
         <div className="relative px-6 py-20 mx-auto space-y-6 bg-white border-b-0 max-w-7xl dark:bg-neutral-950">
-          <div className="absolute inset-y-0 inset-x-4 lg:bg-hero-grid lg:dark:bg-hero-grid-dark bg-12 lg:border-x-[1px] border-black-100 dark:border-white/5 pointer-events-none" />
+          <div className="absolute inset-y-0 inset-x-4 xl:bg-hero-grid xl:dark:bg-hero-grid-dark bg-12 xl:border-x-[1px] border-black-100 dark:border-white/5 pointer-events-none" />
           <h1 className="text-4xl font-bold dark:text-gray-100">
             {post.title}
           </h1>
@@ -86,8 +86,8 @@ export default async function PostPage({ params }: PostProps) {
           </div>
         </div>
 
-        <Section className="pt-0 pb-2">
-          <div className="flex mx-6 min-h-full min-w-0 flex-col items-center justify-center mt-2 overflow-hidden rounded-lg dark:bg-neutral-800 bg-neutral-200 ring-1 ring-inset ring-white/5 aspect-[2/1]">
+        <Section className="py-2">
+          <div className="flex mx-6 min-h-full min-w-0 flex-col items-center justify-center overflow-hidden rounded-lg dark:bg-neutral-800 bg-neutral-200 ring-1 ring-inset ring-white/5 aspect-[2/1]">
             {post.thumbnail ? (
               <Image
                 src={post.thumbnail}
@@ -102,7 +102,7 @@ export default async function PostPage({ params }: PostProps) {
       <main className="layout-content">
         <aside className="space-y-6">
           {post.headings ? (
-            <div className="sticky hidden h-0 align-top lg:block">
+            <div className="sticky hidden h-0 align-top xl:block">
               <h2 className="mb-2 text-xl font-bold uppercase">On this page</h2>
               <TableOfContents headings={post.headings} />
             </div>
