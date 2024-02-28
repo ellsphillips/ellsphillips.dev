@@ -4,11 +4,16 @@ import rehypeAutolinkHeadings, {
   type Options as AutolinkOptions,
 } from "rehype-autolink-headings"
 import { Element } from "rehype-autolink-headings/lib"
+import rehypePrettyCode from "rehype-pretty-code"
 import rehypeSlug from "rehype-slug"
 import remarkGfm from "remark-gfm"
 
 // esbuild does not support path aliases
 import { Post } from "./content/definitions/Post"
+import {
+  rehypePrettyCodeClasses,
+  rehypePrettyCodeOptions,
+} from "./lib/rehyePrettyCode"
 
 export default makeSource({
   contentDirPath: "./content",
@@ -18,15 +23,21 @@ export default makeSource({
       options.target = "esnext"
       return options
     },
-    remarkPlugins: [remarkGfm],
+    remarkPlugins: [[remarkGfm]],
     rehypePlugins: [
-      rehypeSlug,
+      [rehypeSlug],
+      [rehypePrettyCode, rehypePrettyCodeOptions],
+      [rehypePrettyCodeClasses],
       [
         rehypeAutolinkHeadings,
         {
           behavior: "append",
           test: ["h2", "h3"],
-          properties: { class: "heading-link" },
+          properties: {
+            className: [
+              "before:content-['#'] before:absolute before:-ml-[1em] before:text-rose-100/0 hover:before:text-rose-100/50 pl-[1em] -ml-[1em]",
+            ],
+          },
           content: s(
             "svg",
             {
